@@ -4,19 +4,14 @@
   "description": "",
   "main": "webusaaba.js",
   "scripts": {
-    "start": "node webusaaba.js",
-    "dev": "nodemon webusaaba.js",
+    "start": "node webusaaba.js"
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Chris Samuel",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "express": "latest",
-    "lodash": "^4.17.11",
     "mongoose": "latest",
-    "node-restful": "latest",
-    "nodemon": "^1.18.4",
-    "ramda": "^0.25.0"
+    "node-restful": "latest"
   }
 }

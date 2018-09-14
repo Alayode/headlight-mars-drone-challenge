@@ -18,37 +18,39 @@ let callBackFunction = function(response) {
 
 const registerUrl = '/register';
 
-// function SendPOSTRequest( registerUrl, data, callBackFunction) {
+function SendPOSTRequest( registerUrl, data, callBackFunction) {
 
-//     const options = {
-//       hostname: 'localhost',
-//       port: 5000,
-//       path: path,
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       }
-//     };
+    const options = {
+      hostname: 'localhost',
+      port: 5000,
+      path: path,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
   
-//     let response = [];
+    let response = [];
   
-//     req = http.request(options, (res) => {
-//       res.on('data', (chunk) => { response.push(chunk); });
-//       res.on('end', () => { 
-//         let finalResponse = JSON.parse(response.join(''));
-//         callback(finalResponse); 
-//       });
-//     });
+    req = http.request(options, (res) => {
+      res.on('data', (chunk) => { response.push(chunk); });
+      res.on('end', () => { 
+        let finalResponse = JSON.parse(response.join(''));
+        callback(finalResponse); 
+      });
+    });
   
-//     req.write(JSON.Stringify(data));
-//     req.end();
-//   }
+    req.write(JSON.Stringify(data));
+    req.end();
+  }
   const readOnlyData  = {
-    callSign: "myReallyCoolCallSign"
+    callSign: "myReallyCoolCallSign",
+    x: 51 + "",
+    y: 51 + ""
 }
 
 app.post( registerUrl, (req,res) => {
-    const callSign = req.body.callSign;
+    const callSign = req.body.readOnlyData;
 
 res.status(200).send(`You request was completed!! ${callSign}` )
 })
